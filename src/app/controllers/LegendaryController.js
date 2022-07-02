@@ -1,19 +1,18 @@
-const { response } = require('express')
-const LegendariesService = require('../services/LegendariesService')
+const ListLegendariesService = require('../services/ListLegendariesService')
 const CreateLegendaryService = require('../services/CreateLegendaryService')
 
 const controller = {
     index: (req, res) => {
-        const listLegendariesService = LegendariesService.listLegendariesService()
-
+        const listLegendariesService = ListLegendariesService.listLegendariesService()
         res.json(listLegendariesService)
     },
 
     ListData: (req, res) => {
         const { name } = req.query
-        const legendary = LegendariesService.listPokemonData(name)
-        return response.json(legendary)
+        const legendary = ListLegendariesService.listPokemonData(name)
+        return res.json(legendary)
     },
+
     create: (req, res) => {
         const {
             name,
