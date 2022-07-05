@@ -1,4 +1,4 @@
-const ListLegendariesService = require('../services/ListLegendariesService')
+const ListLegendariesService = require('./ListLegendariesService')
 
 const UpdateLegendariesService = {
     update: (
@@ -22,6 +22,7 @@ const UpdateLegendariesService = {
         }
 
         pokemons[pokemonIndice] = {
+            id,
             name,
             description,
             type,
@@ -33,10 +34,7 @@ const UpdateLegendariesService = {
             specialDefense 
         }
 
-        return {
-            id,
-            ...pokemons[pokemonIndice]
-        }
+        return pokemons
     }
 }
 

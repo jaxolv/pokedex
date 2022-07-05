@@ -47,7 +47,7 @@ const ListLegendariesService = {
 
     listPokemonData: (pokemonName) => {
         const pokemonList = ListLegendariesService.listLegendariesService();
-        const pokemon = pokemonList.find(item => item.name === pokemonName)
+        const pokemon = pokemonList.find(pokemon => pokemon.name === pokemonName)
         return pokemon
     }
 }

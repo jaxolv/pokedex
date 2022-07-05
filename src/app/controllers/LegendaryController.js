@@ -1,6 +1,7 @@
 const ListLegendariesService = require('../services/ListLegendariesService')
 const CreateLegendaryService = require('../services/CreateLegendaryService')
 const UpdateLegendariesService = require('../services/UpdateLegendariesService')
+const DeleteLegendaryService = require('../services/DeleteLegendaryService')
 
 const controller = {
     index: (req, res) => {
@@ -68,6 +69,14 @@ const controller = {
             specialDefense
         )
         return res.json(updatedLegendary)
+    },
+
+    delete: (req, res) => {
+        const { id } = req.params
+
+        const resulte = DeleteLegendaryService.delete(id)
+
+        res.send(resulte)
     }
 }
 
