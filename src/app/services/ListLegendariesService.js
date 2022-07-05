@@ -1,5 +1,6 @@
 const LegendaryModel = require('../models/LegendaryModel')
 
+// ListLegendariesByNameService
 const ListLegendariesService = {
     listLegendariesService: () => {
         const pokemon = new LegendaryModel(
@@ -28,7 +29,20 @@ const ListLegendariesService = {
             '1000,00'
         )
 
-        return [pokemon, pokemon2]
+        const pokemon3 = new LegendaryModel(
+            3,
+            'Mew',
+            'Descrição',
+            'pokemon',
+            '1000,00',
+            '1000,00',
+            '1000,00',
+            '1000,00',
+            '1000,00',
+            '1000,00'
+        )
+
+        return [pokemon, pokemon2, pokemon3]
     },
 
     listPokemonData: (pokemonName) => {

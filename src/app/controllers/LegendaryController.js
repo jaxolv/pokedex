@@ -1,5 +1,6 @@
 const ListLegendariesService = require('../services/ListLegendariesService')
 const CreateLegendaryService = require('../services/CreateLegendaryService')
+const UpdateLegendariesService = require('../services/UpdateLegendariesService')
 
 const controller = {
     index: (req, res) => {
@@ -38,6 +39,35 @@ const controller = {
             specialDefense
         )
         return res.json(legendary)
+    },
+
+    update: (req, res) => {
+        const { id } = req.params
+        const {
+            name,
+            description,
+            type,
+            healthPoints,
+            specialAttack,
+            defense,
+            attack,
+            experience,
+            specialDefense
+        } = req.body
+
+        const updatedLegendary = UpdateLegendariesService.update(
+            Number(id),
+            name,
+            description,
+            type,
+            healthPoints,
+            specialAttack,
+            defense,
+            attack,
+            experience,
+            specialDefense
+        )
+        return res.json(updatedLegendary)
     }
 }
 
